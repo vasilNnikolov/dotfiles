@@ -32,7 +32,7 @@
     Plug 'easymotion/vim-easymotion'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-commentary'
-    " Plug 'sheerun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot'
     " Plug 'jiangmiao/auto-pairs'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
@@ -41,9 +41,10 @@
 
 call plug#end()            
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-jedi', 'coc-rls', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rls', 'coc-tabnine']
 
-let g:python_highlight_all = 0
+" let g:python_highlight_all = 0
+let g:python_highlight_space_errors = 0
 
 " ----------------------------LATEX----------------------------
 " This is necessary for VimTeX to load properly. The "indent" is optional.
