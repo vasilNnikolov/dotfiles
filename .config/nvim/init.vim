@@ -33,7 +33,7 @@
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-commentary'
     Plug 'sheerun/vim-polyglot'
-    " Plug 'jiangmiao/auto-pairs'
+    Plug 'jiangmiao/auto-pairs'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
 
