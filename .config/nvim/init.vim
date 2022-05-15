@@ -20,7 +20,6 @@
   set nocompatible
   filetype off   
 
-
   let g:ale_completion_enabled = 1
 
   call plug#begin()
@@ -39,9 +38,12 @@
 
     Plug 'lervag/vimtex'
 
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'vim-pandoc/vim-pandoc-syntax'
+
 call plug#end()            
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rls', 'coc-tabnine']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rls', 'coc-vimtex']
 
 " let g:python_highlight_all = 0
 let g:python_highlight_space_errors = 0
@@ -67,9 +69,6 @@ syntax enable
 " viewer method:
 let g:vimtex_view_method = 'zathura'
 
-" Or with a generic interface:
-" let g:vimtex_view_general_viewer = 'okular'
-" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 " VimTeX uses latexmk as the default compiler backend. If you use it, which is
 " strongly recommended, you probably don't need to configure anything. If you
@@ -78,6 +77,18 @@ let g:vimtex_view_method = 'zathura'
 " see ":help vimtex-compiler".
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_method = 'latexmk'
+
+" let g:Tex_IgnoredWarnings = 
+"     \'Underfull'."\n".
+"     \'Overfull'."\n".
+"     \'specifier changed to'."\n".
+"     \'You have requested'."\n".
+"     \'Missing number, treated as zero.'."\n".
+"     \'There were undefined references'."\n".
+"     \'Citation %.%# undefined'."\n".
+"     \'A float is stuck'."\n".
+"     \'Double space found.'."\n"
+" let g:Tex_IgnoreLevel = 10 
 
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
