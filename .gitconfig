@@ -5,3 +5,5 @@
 	email = vaskonikolov2003@gmail.com
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
