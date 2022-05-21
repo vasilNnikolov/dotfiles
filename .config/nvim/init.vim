@@ -57,6 +57,7 @@ augroup WrapLineInTeXFile
     autocmd FileType tex setlocal wrap linebreak nolist
 augroup END
 
+
 filetype plugin indent on
 set encoding=utf-8
 
@@ -65,35 +66,15 @@ set encoding=utf-8
 " info).
 syntax enable
 
-" Viewer options: One may configure the viewer either by specifying a built-in
-" viewer method:
 let g:vimtex_view_method = 'zathura'
 
 
-" VimTeX uses latexmk as the default compiler backend. If you use it, which is
-" strongly recommended, you probably don't need to configure anything. If you
-" want another compiler backend, you can change it as follows. The list of
-" supported backends and further explanation is provided in the documentation,
-" see ":help vimtex-compiler".
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_method = 'latexmk'
-
-" let g:Tex_IgnoredWarnings = 
-"     \'Underfull'."\n".
-"     \'Overfull'."\n".
-"     \'specifier changed to'."\n".
-"     \'You have requested'."\n".
-"     \'Missing number, treated as zero.'."\n".
-"     \'There were undefined references'."\n".
-"     \'Citation %.%# undefined'."\n".
-"     \'A float is stuck'."\n".
-"     \'Double space found.'."\n"
-" let g:Tex_IgnoreLevel = 10 
 
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = " "
-
 
 
 " use <tab> for trigger completion and navigate to the next complete item
@@ -115,6 +96,7 @@ set bg=dark
 
 " plugin related keyibnds
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <silent><nowait> <leader>d :call CocAction('showSignatureHelp')<CR>
 
 " syntax highlighting
 syntax on
