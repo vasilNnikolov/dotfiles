@@ -45,7 +45,9 @@ call plug#end()
 
 let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rls', 'coc-vimtex']
 
-" let g:python_highlight_all = 0
+
+let g:cot = "menuone,preview,noinsert"
+
 let g:python_highlight_space_errors = 0
 
 " ----------------------------LATEX----------------------------
@@ -67,7 +69,6 @@ set encoding=utf-8
 syntax enable
 
 let g:vimtex_view_method = 'zathura'
-
 
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_method = 'latexmk'
