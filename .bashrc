@@ -96,7 +96,7 @@ alias l='ls -lAh'
 alias gs='git status'
 alias ga='git add'
 alias gcm='git commit -m'
-alias glog='git log --oneline --graph --all --decorate'
+# alias glog='git log --oneline --graph --all --decorate'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
