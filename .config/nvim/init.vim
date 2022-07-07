@@ -1,28 +1,33 @@
-  " general settings
-  let mapleader = " "
-  set scrolloff=8
-  set signcolumn=no 
-  set tabstop=4
-  set shiftwidth=4
-  set expandtab
-  set relativenumber
-  set nu rnu
-  set nohlsearch
-  set exrc
-  set mouse=a
-  set incsearch
-  set termguicolors
-  " so the jk command will not work if k is pressed more than 0.1s after j
-  set timeoutlen=400
-  " make cursor pipe in insert mode
-  let &t_SI = "\e[6 q"
-  let &t_EI = "\e[2 q"
-  set nocompatible
-  filetype off   
+" general settings
+let mapleader = " "
+set scrolloff=8
+set signcolumn=no 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set relativenumber
+set nu rnu
+set nohlsearch
+set exrc
+set mouse=a
+set incsearch
+set termguicolors
 
-  let g:ale_completion_enabled = 1
+set wrap
+" set linebreak
+set textwidth=140
+set colorcolumn=140
 
-  call plug#begin()
+" so the jk command will not work if k is pressed more than 0.1s after j
+set timeoutlen=400
+" make cursor pipe in insert mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+set nocompatible
+filetype off   
+let g:ale_completion_enabled = 1
+
+call plug#begin()
     Plug 'morhetz/gruvbox'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -54,11 +59,10 @@ let g:python_highlight_space_errors = 0
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
 " enable word wrap for latex files
-augroup WrapLineInTeXFile
-    autocmd!
-    autocmd FileType tex setlocal wrap linebreak nolist
-augroup END
-
+" augroup WrapLineInTeXFile
+"     autocmd!
+"     autocmd FileType tex setlocal wrap linebreak nolist
+" augroup END
 
 filetype plugin indent on
 set encoding=utf-8
@@ -76,7 +80,6 @@ let g:vimtex_compiler_method = 'latexmk'
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = " "
-
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -121,7 +124,6 @@ if !exists("*OnSavingVimrc")
 endif
 
 nnoremap <Leader><Tab> :tabnext<cr>
-nnoremap <Leader>t :tabnew<Space>
 inoremap jk <Esc>
 
 "allow buffer switching without saving
