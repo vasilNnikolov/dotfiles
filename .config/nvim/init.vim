@@ -106,6 +106,8 @@ nnoremap <silent> <leader>d :call CocActionAsync('jumpDefinition')<CR>
 " syntax highlighting
 syntax on
 set foldmethod=indent
+set foldnestmax=20
+set foldlevel=20
 set nofoldenable
 
 set autochdir
