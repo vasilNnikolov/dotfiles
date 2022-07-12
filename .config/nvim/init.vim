@@ -100,7 +100,8 @@ set bg=dark
 
 " plugin related keyibnds
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <silent><nowait> <leader>d :call CocAction('showSignatureHelp')<CR>
+" jump to definition with space d, go back wiht Ctrl-O
+nnoremap <silent> <leader>d :call CocActionAsync('jumpDefinition')<CR>
 
 " syntax highlighting
 syntax on
