@@ -48,7 +48,7 @@ call plug#begin()
 
 call plug#end()            
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rust-analyzer', 'coc-vimtex']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rust-analyzer', 'coc-vimtex', 'coc-sh']
 
 " for function signature help 
 let g:cot = "menuone,preview,noinsert"
