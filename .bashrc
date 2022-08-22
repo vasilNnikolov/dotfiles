@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lAh'
+alias asd='xdg-open'
 
 # git related aliases
 alias gs='git status'
