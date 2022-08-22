@@ -46,9 +46,14 @@ call plug#begin()
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'vim-pandoc/vim-pandoc-syntax'
 
-call plug#end()            
+call plug#end() 
+" vim-airline theme settings
+let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pairs', 'coc-pyright', 'coc-rust-analyzer', 'coc-vimtex', 'coc-sh']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pyright', 'coc-pairs', 'coc-rust-analyzer', 'coc-vimtex', 'coc-sh']
 
 " for function signature help 
 let g:cot = "menuone,preview,noinsert"
