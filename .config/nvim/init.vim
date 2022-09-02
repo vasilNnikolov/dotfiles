@@ -1,6 +1,6 @@
 " general settings
 let mapleader = " "
-set scrolloff=8
+set scrolloff=12
 set signcolumn=no 
 set tabstop=4
 set shiftwidth=4
@@ -8,13 +8,13 @@ set expandtab
 set relativenumber
 set nu rnu
 set nohlsearch
-set exrc
 set mouse=a
 set incsearch
 set termguicolors
 set autochdir
 
 set wrap
+set linebreak
 
 " so the jk command will not work if k is pressed more than 0.1s after j
 set timeoutlen=400
@@ -32,6 +32,8 @@ call plug#begin()
     Plug 'easymotion/vim-easymotion'
     Plug 'tpope/vim-commentary'
     Plug 'sheerun/vim-polyglot'
+    
+    Plug 'jiangmiao/auto-pairs'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
     Plug 'psf/black', { 'branch': 'stable' }
@@ -39,7 +41,7 @@ call plug#begin()
 
     Plug 'lervag/vimtex'
 call plug#end() 
-" -----------------------------colorscheme----------------------------------
+" ----------------------------colorscheme----------------------------------
 colorscheme gruvbox
 set bg=dark
 
@@ -53,7 +55,7 @@ endif
 let g:airline_symbols.colnr = ' '
 
 " ----------------------------coc.nvim--------------------------------------
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pyright', 'coc-pairs', 'coc-rust-analyzer', 'coc-vimtex', 'coc-sh']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-pyright', 'coc-rust-analyzer', 'coc-vimtex', 'coc-sh']
 " insert mode completion 
 let g:cot = "menuone,preview,noinsert"
 
@@ -69,7 +71,8 @@ inoremap <silent><expr> <Tab>
             \ <SID>check_back_space() ? "\<Tab>" :
             \ coc#refresh()
 
-" ------------------------------NERDTree------------------------------------------
+" ----------------------------NERDTree------------------------------------------
+let g:NERDTreeWinSize=38
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 autocmd VimEnter * NERDTree
@@ -80,12 +83,12 @@ nnoremap <silent> <leader>d :call CocActionAsync('jumpDefinition')<CR>
 " close nerdtree if it is the only buffer in tab
 autocmd BufEnter * if tabpagenr('$') > 1 && !len(filter(tabpagebuflist(), 'getbufvar(v:val,"&ft") != "nerdtree"')) | tabclose | endif
 
-" ---------------------vim-commentary-------------------------- 
+" ----------------------------vim-commentary-------------------------- 
 xmap <C-\> gc
 
 " ----------------------------LaTeX--------------------------------------------
 filetype plugin indent on
-syntax on 
+" syntax on 
 
 let g:vimtex_view_method = 'zathura'
 let g:tex_flavor = 'latex'
@@ -93,25 +96,26 @@ let g:vimtex_compiler_method = 'latexmk'
 
 let maplocalleader = " "
 
-" ---------------------------window and tab movement-------------------------------
+" ----------------------------window and tab movement-------------------------------
 " set <Leader>a to move win
 nnoremap <Leader>a <C-w>h
 nnoremap <Leader>l <C-w>l
 nnoremap <Leader><Tab> :tabnext<cr>
 
-" ---------------------------folding-------------------------------------
+" ----------------------------folding-------------------------------------
 set foldmethod=indent
 set foldnestmax=20
 set foldlevel=20
 set nofoldenable
 
-" --------------------------black------------------------------
+" ----------------------------black------------------------------
 augroup black_on_save
   autocmd!
   autocmd BufWritePre *.py Black
+  autocmd BufWritePre *.py Isort
 augroup end
 
-"-----------------visual selection---------------------------
+" ----------------------------visual selection---------------------------
 let g:highlighting = 0
 function! Highlighting()
   if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
@@ -125,5 +129,5 @@ endfunction
 
 nnoremap <silent> <expr> <CR> Highlighting()
 
-" ---------------------autosource init.vim on save ----------------
+" ----------------------------autosource init.vim on save ----------------
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
