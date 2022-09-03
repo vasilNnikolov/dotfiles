@@ -16,3 +16,4 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
+vim.g.python_highlight_space_errors = false
