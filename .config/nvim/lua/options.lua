@@ -12,3 +12,7 @@ vim.opt.autochdir = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.background = "dark" -- or "light" for light mode
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+
