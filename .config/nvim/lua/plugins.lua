@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
     use 'easymotion/vim-easymotion'
     use 'tpope/vim-commentary'
     use 'sheerun/vim-polyglot'
-    
     use 'jiangmiao/auto-pairs'
     use 'neovim/nvim-lspconfig'
 
@@ -22,4 +21,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    -- use "psf/black"
+    -- use 'fisadev/vim-isort'
+
 end)
