@@ -23,5 +23,4 @@ return require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip'
     use "psf/black"
     use 'fisadev/vim-isort'
-
 end)
