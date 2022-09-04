@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  black = {
+    loaded = true,
+    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/black",
+    url = "https://github.com/psf/black"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -158,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-easymotion",
     url = "https://github.com/easymotion/vim-easymotion"
+  },
+  ["vim-isort"] = {
+    loaded = true,
+    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-isort",
+    url = "https://github.com/fisadev/vim-isort"
   },
   ["vim-polyglot"] = {
     loaded = true,
