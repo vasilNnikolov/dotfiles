@@ -97,7 +97,7 @@ alias asd='xdg-open'
 alias gs='git status'
 alias ga='git add'
 alias gcm='git commit -m'
-alias gd='git diff'
+alias gd='git diff --ignore-space-at-eol'
 # alias glog='git log --oneline --graph --all --decorate'
 
 
