@@ -8,10 +8,6 @@ return require('packer').startup(function(use)
     use 'tpope/vim-commentary'
     use 'sheerun/vim-polyglot'
     use 'jiangmiao/auto-pairs'
-    use 'neovim/nvim-lspconfig'
-
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
 
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -21,6 +17,13 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+
+    -- python
     use "psf/black"
     use 'fisadev/vim-isort'
+
+    --latex
+    use 'lervag/vimtex'
 end)

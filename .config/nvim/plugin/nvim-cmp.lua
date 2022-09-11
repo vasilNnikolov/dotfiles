@@ -12,6 +12,7 @@ cmp.setup({
     end,
   },
   mapping = {
+    -- tab completion
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()

@@ -13,6 +13,7 @@ end
 local lsp_flags = {
   debounce_text_changes = 150,
 }
+-- require all language servers
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
