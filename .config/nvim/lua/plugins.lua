@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-commentary'
     use 'sheerun/vim-polyglot'
     use 'jiangmiao/auto-pairs'
+    use 'tpope/vim-fugitive'
 
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'

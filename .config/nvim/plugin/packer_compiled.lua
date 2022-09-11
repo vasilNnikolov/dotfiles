@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-easymotion",
     url = "https://github.com/easymotion/vim-easymotion"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-isort"] = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-isort",
@@ -178,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
