@@ -90,13 +90,16 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -lAh'
+alias l='ls -lAhtr'
 alias asd='xdg-open'
 
 # git related aliases
 alias gs='git status'
 alias ga='git add'
 alias gcm='git commit -m'
+alias gc='git commit'
+alias gck='git checkout'
+alias gd='git diff --ignore-space-at-eol'
 # alias glog='git log --oneline --graph --all --decorate'
 
 
