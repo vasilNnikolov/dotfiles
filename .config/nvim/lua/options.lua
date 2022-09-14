@@ -15,5 +15,6 @@ vim.opt.background = "dark" -- or "light" for light mode
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
+vim.opt.hlsearch = false
 
 vim.g.python_highlight_space_errors = false
