@@ -58,41 +58,37 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # =======================CHANGE FOCUS===========================
-{
-        bindsym $mod+j focus left
-        bindsym $mod+k focus down
-        bindsym $mod+l focus up
-        bindsym $mod+semicolon focus right
 
-        # alternatively, you can use the cursor keys:
-        bindsym $mod+Left focus left
-        bindsym $mod+Down focus down
-        bindsym $mod+Up focus up
-        bindsym $mod+Right focus right
-}
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
 
 # =======================MOVE FOCUSED WINDOW===========================
-{
-        # moving focused window around 
-        bindsym $mod+Shift+j move left
-        bindsym $mod+Shift+k move down
-        bindsym $mod+Shift+l move up
-        bindsym $mod+Shift+semicolon move right
+# moving focused window around 
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
-        # alternatively, you can use the cursor keys:
-        bindsym $mod+Shift+Left move left
-        bindsym $mod+Shift+Down move down
-        bindsym $mod+Shift+Up move up
-        bindsym $mod+Shift+Right move right
-}
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # =======================CHANGE SPLITTING TYPE===========================
-{
-        bindsym $mod+h split h
+bindsym $mod+h split h
 
-        # split in vertical orientation
-        bindsym $mod+v split v
-}
+# split in vertical orientation
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
