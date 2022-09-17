@@ -26,4 +26,6 @@ return require('packer').startup(function(use)
 
     --latex
     use 'lervag/vimtex'
+    use 'godlygeek/tabular'
+    use 'preservim/vim-markdown'
 end)

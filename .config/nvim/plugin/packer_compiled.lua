@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  tabular = {
+    loaded = true,
+    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/tabular",
+    url = "https://github.com/godlygeek/tabular"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-airline",
@@ -168,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-isort",
     url = "https://github.com/fisadev/vim-isort"
+  },
+  ["vim-markdown"] = {
+    loaded = true,
+    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-markdown",
+    url = "https://github.com/preservim/vim-markdown"
   },
   ["vim-polyglot"] = {
     loaded = true,

@@ -6,4 +6,5 @@ vim.cmd([[
     let g:vimtex_compiler_method = 'latexmk'
 
     let maplocalleader = " "
+    let g:vim_markdown_math = 1
 ]])
