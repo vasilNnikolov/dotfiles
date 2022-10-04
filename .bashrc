@@ -76,17 +76,12 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
     alias -- -='cd -'
 fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -95,9 +90,9 @@ alias l='ls -lAhtr'
 alias lg='list_then_grep'
 list_then_grep(){
     if [ $# -eq 1 ]; then
-        l . | grep $1
+        l . | grep -i $1
     elif [ $# -eq 2 ]; then
-        l $1 | grep $2
+        l $1 | grep -i $2
     else
         echo "ERROR: enter pattern or dir and pattern"
     fi
@@ -111,9 +106,10 @@ alias gcm='git commit -m'
 alias gc='git commit'
 alias gck='git checkout'
 alias gd='git diff --ignore-space-at-eol'
-# alias glog='git log --oneline --graph --all --decorate'
 
 
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
