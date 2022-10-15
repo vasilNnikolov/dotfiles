@@ -27,3 +27,11 @@ require('lspconfig')['sumneko_lua'].setup{
     flags = lsp_flags,
 }
 
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+-- Show line diagnostics automatically in hover window
+-- vim.o.updatetime = 250
+-- vim.cmd[[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
