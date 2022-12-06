@@ -1,5 +1,5 @@
 vim.cmd[[
-    autocmd BufWritePre *.py execute 'Black'
-    autocmd BufWritePre *.py execute 'Isort'
+    autocmd BufWritePre *.py silent execute 'Black' 
+    autocmd BufWritePre *.py silent execute 'Isort' 
 ]]
 
