@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
     -- python
     use "psf/black"
-    use 'fisadev/vim-isort'
+    -- use 'fisadev/vim-isort'
 
     --latex
     use 'lervag/vimtex'

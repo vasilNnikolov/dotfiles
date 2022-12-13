@@ -169,11 +169,6 @@ _G.packer_plugins = {
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-isort"] = {
-    loaded = true,
-    path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-isort",
-    url = "https://github.com/fisadev/vim-isort"
-  },
   ["vim-markdown"] = {
     loaded = true,
     path = "/home/vasil/.local/share/nvim/site/pack/packer/start/vim-markdown",
