@@ -1,5 +1,5 @@
 vim.opt.scrolloff = 12
-vim.opt.signcolumn = "no" 
+vim.opt.signcolumn = "no"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
