@@ -10,7 +10,10 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save.enabled = false
+lvim.format_on_save.enabled = true
+lvim.lsp.diagnostics.virtual_text = false
+
+
 lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -64,7 +67,7 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.terminal.active = false 
+lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
@@ -133,15 +136,6 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "black", filetypes = { "python" } },
   { command = "isort", filetypes = { "python" } },
-  {
-    -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    command = "prettier",
-    ---@usage arguments to pass to the formatter
-    -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    extra_args = { "--print-with", "100" },
-    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact" },
-  },
 }
 
 -- -- set additional linters
@@ -191,3 +185,15 @@ formatters.setup {
 
 -- non-basic configs
 vim.opt.hlsearch = false
+
+-- folding
+vim.opt.foldmethod = 'indent'
+vim.opt.foldnestmax = 20
+vim.opt.foldlevel = 20
+vim.opt.foldenable = false
+
+-- jf or fj to go from insert to normal mode
+vim.opt.timeoutlen = 400
+-- keymaps
+vim.keymap.set('i', 'jf', '<Esc>', { noremap = true })
+vim.keymap.set('i', 'fj', '<Esc>', { noremap = true })
