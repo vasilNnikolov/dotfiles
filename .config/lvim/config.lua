@@ -2,7 +2,7 @@
  THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
  `lvim` is the global options object
 ]]
-if vim.fn.has("win64") or vim.fn.has("win32") then
+if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
   -- Enable powershell as your default shell
   vim.opt.shell = "pwsh.exe -NoLogo"
   vim.opt.shellcmdflag =
