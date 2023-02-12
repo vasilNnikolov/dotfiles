@@ -207,6 +207,7 @@ lvim.plugins = {
 --   end,
 -- })
 
+lvim.builtin.luasnip.sources.friendly_snippets = true
 
 
 -- non-basic configs
