@@ -1,3 +1,4 @@
-\.git
-\34_kb
+/.git
+/34_kb
 README.md
+.gitignore

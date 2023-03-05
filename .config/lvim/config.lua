@@ -100,6 +100,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "python",
   "rust",
+  "bash"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }

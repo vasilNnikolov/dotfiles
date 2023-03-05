@@ -5,6 +5,10 @@
 - install nvim from apt and NOT snap
 - install nerdfonts using [getnf](https://github.com/ronniedroid/getnf)
 
+## Bash
+
+- install fzf with git so it can create `.fzf` folder inside `~`
+
 ## Splitkb Aurora Sweep 34
 
 - generate config with [QMK Configurator](https://config.qmk.fm/#/splitkb/aurora/sweep/rev1/LAYOUT_split_3x5_2)
