@@ -189,7 +189,12 @@ formatters.setup {
 -- Additional Plugins
 lvim.plugins = {
   {
-    "easymotion/vim-easymotion",
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+      vim.api.nvim_set_keymap("n", "<Space><Space>", ":HopWord<cr>", { silent = true })
+    end,
   },
 }
 
@@ -207,10 +212,11 @@ lvim.plugins = {
 --   end,
 -- })
 
-
-vim.opt.clipboard = "unnamedplus"
 -- non-basic configs
 vim.opt.hlsearch = false
+
+-- copying
+vim.opt.clipboard = "unnamedplus"
 
 -- folding
 vim.opt.foldmethod = 'indent'
