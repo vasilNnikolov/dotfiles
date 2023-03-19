@@ -7,7 +7,7 @@
 
 ## Bash
 
-- install fzf with git so it can create `.fzf` folder inside `~`
+- install fzf with git so it can create `.fzf` folder inside `~`, this enables `Ctrl-R` to work with a popup menu
 
 ## Splitkb Aurora Sweep 34
 
