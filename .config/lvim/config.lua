@@ -191,7 +191,11 @@ lvim.plugins = {
     {
         "easymotion/vim-easymotion",
     },
+    -- {
+    --     "simrat39/rust-tools.nvim",
+    -- }
 }
+require 'lspconfig'.rust_analyzer.setup({})
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
