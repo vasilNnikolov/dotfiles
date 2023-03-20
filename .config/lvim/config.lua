@@ -15,14 +15,14 @@ if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
 
   -- Set a compatible clipboard manager
   vim.g.clipboard = {
-      copy = {
-          ["+"] = "win32yank.exe -i --crlf",
-          ["*"] = "win32yank.exe -i --crlf",
-      },
-      paste = {
-          ["+"] = "win32yank.exe -o --lf",
-          ["*"] = "win32yank.exe -o --lf",
-      },
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
   }
 end
 
@@ -37,7 +37,6 @@ lvim.colorscheme = "lunar"
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -97,10 +96,11 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = nil
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-    "c",
-    "lua",
-    "python",
-    "rust",
+  "c",
+  "lua",
+  "python",
+  "rust",
+  "bash"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -155,17 +155,17 @@ lvim.builtin.treesitter.highlight.enable = true
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-    { command = "black", filetypes = { "python" } },
-    { command = "isort", filetypes = { "python" } },
-    -- {
-    --   -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    --   command = "prettier",
-    --   ---@usage arguments to pass to the formatter
-    --   -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    --   extra_args = { "--print-with", "100" },
-    --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    --   filetypes = { "typescript", "typescriptreact" },
-    -- },
+  { command = "black", filetypes = { "python" } },
+  { command = "isort", filetypes = { "python" } },
+  -- {
+  --   -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+  --   command = "prettier",
+  --   ---@usage arguments to pass to the formatter
+  --   -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+  --   extra_args = { "--print-with", "100" },
+  --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+  --   filetypes = { "typescript", "typescriptreact" },
+  -- },
 }
 
 -- -- set additional linters
@@ -188,12 +188,14 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-    {
-        "easymotion/vim-easymotion",
-    },
-    -- {
-    --     "simrat39/rust-tools.nvim",
-    -- }
+  {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+      vim.api.nvim_set_keymap("n", "<Space><Space>", ":HopWord<cr>", { silent = true })
+    end,
+  },
 }
 require 'lspconfig'.rust_analyzer.setup({})
 
@@ -211,11 +213,11 @@ require 'lspconfig'.rust_analyzer.setup({})
 --   end,
 -- })
 
-lvim.builtin.luasnip.sources.friendly_snippets = true
-
-
 -- non-basic configs
 vim.opt.hlsearch = false
+
+-- copying
+vim.opt.clipboard = "unnamedplus"
 
 -- folding
 vim.opt.foldmethod = 'indent'
@@ -228,3 +230,9 @@ vim.opt.timeoutlen = 400
 -- keymaps
 vim.keymap.set('i', 'jf', '<Esc>', { noremap = true })
 vim.keymap.set('i', 'fj', '<Esc>', { noremap = true })
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
+local cmp = require('cmp')
+
+cmp.setup {
+  preselect = cmp.PreselectMode.None
+}
