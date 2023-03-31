@@ -197,7 +197,7 @@ lvim.plugins = {
     end,
   },
 }
-require 'lspconfig'.rust_analyzer.setup({})
+-- require 'lspconfig'.rust_analyzer.setup({})
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
