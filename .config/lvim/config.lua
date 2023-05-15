@@ -39,6 +39,9 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files<cr>", "Find local files" }
+lvim.builtin.which_key.mappings["g"].f = { "<cmd>Telescope git_files<cr>", "Find git files" }
+
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
