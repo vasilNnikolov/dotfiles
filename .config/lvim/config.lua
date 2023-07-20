@@ -96,6 +96,7 @@ lvim.builtin.nvimtree.setup.update_focused_file.update_cwd = nil
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.highlight_git = nil
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = nil
+lvim.builtin.nvimtree.setup.git.timeout = 2000
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -236,7 +237,7 @@ vim.keymap.set('i', 'fj', '<Esc>', { noremap = true })
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 local cmp = require('cmp')
 
-cmp.setup().config { preselect = cmp.PreselectMode.None }
--- cmp.setup {
---   preselect = cmp.PreselectMode.None
--- }
+-- cmp.setup().preselect = cmp.PreselectMode.None
+require('cmp').setup({
+    preselect = cmp.PreselectMode.None
+})
