@@ -1,5 +1,5 @@
 [credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
+	; helper = !/usr/bin/gh auth git-credential
 [user]
 	email = vaskonikolov2003@gmail.com
 [core]
