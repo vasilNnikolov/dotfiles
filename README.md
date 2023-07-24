@@ -11,7 +11,8 @@
 
 ## Pandoc
 
-- use with `sudo docker run --rm --volume "$(pwd):/data" --user $(id -u):$(id -g) pandoc -V lang=bg <md_file>.md -o <pdf_filename>.pdf`
+- use with `docker run --rm -v "$(pwd):/data" -it pandoc/latex --from GFM gfm_file.md -o output_file.pdf`
+Note: this only works in english, bulgarian is not supported
 
 ## Splitkb Aurora Sweep 34
 

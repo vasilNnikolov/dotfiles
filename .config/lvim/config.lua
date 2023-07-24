@@ -15,14 +15,14 @@ if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
 
   -- Set a compatible clipboard manager
   vim.g.clipboard = {
-      copy = {
-          ["+"] = "win32yank.exe -i --crlf",
-          ["*"] = "win32yank.exe -i --crlf",
-      },
-      paste = {
-          ["+"] = "win32yank.exe -o --lf",
-          ["*"] = "win32yank.exe -o --lf",
-      },
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
   }
 end
 
@@ -42,6 +42,14 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files<cr>", "Find local files" }
 lvim.builtin.which_key.mappings["g"].f = { "<cmd>Telescope git_files<cr>", "Find git files" }
 
+-- lvim.builtin.telescope.defaults.layout_config = { horizontal = { width = 0.8 } }
+-- lvim.builtin.telescope.defaults = {
+--     layout_config = {
+--         vertical = { width = 0.8 }
+--         -- other layout configuration here
+--     },
+--     -- other defaults configuration here
+-- }
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -100,11 +108,11 @@ lvim.builtin.nvimtree.setup.git.timeout = 2000
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-    "c",
-    "lua",
-    "python",
-    "rust",
-    "bash"
+  "c",
+  "lua",
+  "python",
+  "rust",
+  "bash"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -159,17 +167,17 @@ lvim.builtin.treesitter.highlight.enable = true
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-    { command = "black", filetypes = { "python" } },
-    { command = "isort", filetypes = { "python" } },
-    -- {
-    --   -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    --   command = "prettier",
-    --   ---@usage arguments to pass to the formatter
-    --   -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    --   extra_args = { "--print-with", "100" },
-    --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    --   filetypes = { "typescript", "typescriptreact" },
-    -- },
+  { command = "black", filetypes = { "python" } },
+  { command = "isort", filetypes = { "python" } },
+  -- {
+  --   -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+  --   command = "prettier",
+  --   ---@usage arguments to pass to the formatter
+  --   -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+  --   extra_args = { "--print-with", "100" },
+  --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+  --   filetypes = { "typescript", "typescriptreact" },
+  -- },
 }
 
 -- -- set additional linters
@@ -192,14 +200,14 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-    {
-        "phaazon/hop.nvim",
-        event = "BufRead",
-        config = function()
-          require("hop").setup()
-          vim.api.nvim_set_keymap("n", "<Space><Space>", ":HopWord<cr>", { silent = true })
-        end,
-    },
+  {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+      vim.api.nvim_set_keymap("n", "<Space><Space>", ":HopWord<cr>", { silent = true })
+    end,
+  },
 }
 -- require 'lspconfig'.rust_analyzer.setup({})
 
@@ -236,8 +244,8 @@ vim.keymap.set('i', 'jf', '<Esc>', { noremap = true })
 vim.keymap.set('i', 'fj', '<Esc>', { noremap = true })
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 local cmp = require('cmp')
-
--- cmp.setup().preselect = cmp.PreselectMode.None
-require('cmp').setup({
-    preselect = cmp.PreselectMode.None
+cmp.setup({
+  preselect = cmp.PreselectMode.None
 })
+vim.wo.wrap = true
+vim.wo.linebreak = true
