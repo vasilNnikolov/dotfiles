@@ -85,30 +85,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias -- -='cd -'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -lAhtr'
-alias lg='list_then_grep'
-alias cl='clear'
-list_then_grep(){
-    if [ $# -eq 1 ]; then
-        l . | grep -i $1
-    elif [ $# -eq 2 ]; then
-        l $1 | grep -i $2
-    else
-        echo "ERROR: enter pattern or dir and pattern"
-    fi
-}
-alias asd='xdg-open'
-
-# git related aliases
-alias gs='git status'
-alias ga='git add'
-alias gcm='git commit -m'
-alias gc='git commit'
-alias gck='git checkout'
-alias gd='git diff --ignore-space-at-eol'
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 
 export VISUAL=nvim
