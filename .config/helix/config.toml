@@ -1,0 +1,17 @@
+[editor]
+bufferline="always"
+popup-border="all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.insert]
+j = { f = "normal_mode" }
+f= { j = "normal_mode" }
+
+
