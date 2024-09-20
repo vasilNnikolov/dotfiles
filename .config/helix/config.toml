@@ -17,4 +17,8 @@ f= { j = "normal_mode" }
 
 [keys.normal]
 space.c = ":buffer-close"
+y = ":clipboard-yank"
+
+[keys.select]
+y = ":clipboard-yank"
 
