@@ -1,6 +1,7 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -lAhtr'
+alias lsd='ls /dev/ttyUSB*'
 alias cl='clear'
 alias cls='clear'
 alias asd='xdg-open'
@@ -30,3 +31,6 @@ alias gck='git checkout'
 alias gd='git diff --ignore-space-at-eol'
 alias gds='git diff --ignore-space-at-eol --staged'
 
+# do not respect gitignore
+alias fd='fd -u'
+alias rg='rg -S --no-ignore'

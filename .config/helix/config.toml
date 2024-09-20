@@ -1,3 +1,4 @@
+theme = "tokyonight"
 [editor]
 bufferline="always"
 popup-border="all"
@@ -14,4 +15,6 @@ hidden = false
 j = { f = "normal_mode" }
 f= { j = "normal_mode" }
 
+[keys.normal]
+space.c = ":buffer-close"
 
