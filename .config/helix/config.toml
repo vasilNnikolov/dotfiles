@@ -2,6 +2,7 @@ theme = "tokyonight"
 [editor]
 bufferline="always"
 popup-border="all"
+completion-timeout=50
 
 [editor.cursor-shape]
 insert = "bar"
