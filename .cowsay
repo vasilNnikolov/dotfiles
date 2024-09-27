@@ -1,0 +1,14 @@
+
+
+if [ $(($RANDOM % 100)) -eq 0 ]; then
+    MESSAGE='ENJOY'
+    if [ -n "$(which cowsay)" ]; then
+        for COWTYPE in $(find /usr/share/cowsay/cows/ -name "*.cow" -printf "%f\n" | sed "s/\.cow//"); do
+            echo $COWTYPE
+            cowsay -f $COWTYPE $MESSAGE
+            sleep 0.5
+        done
+    else
+        echo $MESSAGE
+    fi
+fi
