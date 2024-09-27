@@ -1,5 +1,3 @@
-alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -lAhtr'
 alias lsd='ls /dev/ttyUSB*'
 alias cl='clear'
@@ -31,6 +29,12 @@ alias gck='git checkout'
 alias gd='git diff --ignore-space-at-eol'
 alias gds='git diff --ignore-space-at-eol --staged'
 
-# do not respect gitignore
-alias fd='fd -u'
-alias rg='rg -S --no-ignore'
+
+if [ $(($RANDOM % 10)) -eq 0 ]; then
+    MESSAGE='CASINO TIME'
+    if [ -n "$(which cowsay)" ]; then
+        cowsay -f stegosaurus $MESSAGE
+    else
+        echo $MESSAGE
+    fi
+fi
