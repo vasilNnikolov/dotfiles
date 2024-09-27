@@ -1,3 +1,4 @@
+alias zj="zellij"
 alias l='ls -lAhtr'
 alias lsd='ls /dev/ttyUSB*'
 alias cl='clear'
