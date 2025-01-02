@@ -30,3 +30,4 @@ alias gck='git checkout'
 alias gd='git diff --ignore-space-at-eol'
 alias gds='git diff --ignore-space-at-eol --staged'
 
+alias crr='cargo run --release'
