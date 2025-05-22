@@ -8,6 +8,18 @@ auto-format = true
 name = "rust"
 language-servers = ["rust-analyzer"]
 
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+
+[language-server.clangd]
+command = "clangd"
+# args = ["-std=c99"]
+
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
