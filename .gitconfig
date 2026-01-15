@@ -3,7 +3,7 @@
 [user]
 	email = vaskonikolov2003@gmail.com
 [core]
-	editor = nvim
+	editor = hx
 [init]
 	defaultBranch = main
 [alias]

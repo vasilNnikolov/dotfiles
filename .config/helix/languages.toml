@@ -1,7 +1,7 @@
 [[language]]
 name = "python"
-language-servers = ["pyright"]
-formatter = { command = "black", args = ["--quiet", "-"] }
+language-servers = ["pyright", "ruff"]
+formatter = { command = "ruff", args = [ "format", "-q", "-" ] }
 auto-format = true
 
 [[language]]
@@ -19,6 +19,10 @@ command = "clangd"
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [[language]]
 name = "markdown"
